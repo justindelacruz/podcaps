@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "description": "",
   "repository": "",
+  "engines": {
+    "node": "0.10.x"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "karma": "~0.10",
