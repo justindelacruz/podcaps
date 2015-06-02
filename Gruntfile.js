@@ -24,5 +24,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-bower');
 
     // Default tasks
-    grunt.registerTask('heroku:production', ['compass', 'bower']);
+    grunt.registerTask('heroku:production', ['bower', 'compass']);
 };
