@@ -12,7 +12,10 @@ module.exports = function(grunt) {
         },
         bower: {
             dev: {
-                dest: 'src/static/bower_components'
+                dest: 'src/static/bower_components',
+                options: {
+                    ignorePackages: ['jquery']
+                }
             }
         }
     });
