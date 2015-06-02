@@ -12,7 +12,8 @@
     "foundation": "5.5.x",
     "justindelacruz-popcorn-js": "1.5.11-fork",
     "angular-sanitize": "1.3.x",
-    "font-awesome": "4.3.x"
+    "font-awesome": "4.3.x",
+    "jquery": "~2.1.4"
   },
   "authors": [
     "Justin Dela Cruz <justindelacruz@server.fake>"

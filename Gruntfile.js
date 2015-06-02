@@ -9,11 +9,6 @@ module.exports = function(grunt) {
                     specify: 'src/static/sass/app.scss'
                 }
             }
-        },
-        bower: {
-            dev: {
-                dest: 'src/static/bower_components'
-            }
         }
     });
 
