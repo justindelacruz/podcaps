@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="captions medium-12 column">
+        <span class="caption-text"
+              data-start="{{caption.start}}"
+              data-end="{{caption.end}}"
+              ng-class="{'active': time >= caption.start && time < caption.end}"
+              ng-repeat="caption in captions.captions"
+              ng-bind-html="caption.text"
+              ng-click="seek()">
+        </span>
+    </div>
+</div>
+
+<div id="audio"></div>

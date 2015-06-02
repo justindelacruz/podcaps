@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" ng-app="myApp" class="no-js">
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Podcaps | Captions for the Welcome to Night Vale Podcast</title>
+    <meta name="description" content="TODO">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/font-awesome/css/font-awesome.min.css') }}">
+    <script src="{{ url_for('static', filename='bower_components/modernizr/modernizr.js') }}"></script>
+</head>
+<body>
+
+    <div id="main" role="main">
+
+        <div class="sticky">
+            <nav class="top-bar" data-topbar role="navigation">
+                <ul class="title-area">
+                    <li class="name">
+                        <h1><a href="/">Podcaps</a></h1>
+                    </li>
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                </ul>
+
+                <section class="top-bar-section">
+                    <!--
+                    <ul class="left">
+                        <li class="divider hide-for-small"></li>
+                        <li><a href="#">Welcome to Night Vale</a></li>
+                        <li class="divider hide-for-small"></li>
+                    </ul>
+                    -->
+                    
+                    <ul class="right">
+                        <li class="has-form" ng-controller="NavCtrl">
+                            <form ng-submit="submit()">
+                                <div class="row collapse">
+                                    <div class="large-8 small-9 columns">
+                                        <input type="text" placeholder="Search captions" ng-model="text">
+                                    </div>
+                                    <div class="large-4 small-3 columns">
+                                        <a href="#" class="secondary button"><i class="fa fa-search fa-lg"></i></a>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+
+        <div id="container" ng-view></div>
+
+        <footer>
+            <div class="row">
+                <div class="large-12 column">
+                    <p class="back-to-top">
+                        <a href="#main">Back to Top</a>
+                    </p>
+
+                    <p>
+                        <a href="http://www.podcaps.io">Podcaps.io</a> is an ongoing project by <a href="http://www.justindelacruz.me">Justin Dela Cruz</a>.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bower Components -->
+    <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/foundation/js/foundation.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/angular/angular.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/angular-route/angular-route.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/angular-resource/angular-resource.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/angular-sanitize/angular-sanitize.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/angular-animate/angular-animate.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/justindelacruz-popcorn-js/popcorn.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/justindelacruz-popcorn-js/modules/player/popcorn.player.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/justindelacruz-popcorn-js/wrappers/common/popcorn._MediaElementProto.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/justindelacruz-popcorn-js/wrappers/soundcloud/popcorn.HTMLSoundCloudAudioElement.js') }}"></script>
+    
+    <!-- App JS -->
+    <script src="{{ url_for('static', filename='ng-app/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='ng-app/services.js') }}"></script>
+    <script src="{{ url_for('static', filename='ng-app/nav/nav.js') }}"></script>
+    <script src="{{ url_for('static', filename='ng-app/home/home.js') }}"></script>
+    <script src="{{ url_for('static', filename='ng-app/search/search.js') }}"></script>
+    <script src="{{ url_for('static', filename='ng-app/play/play.js') }}"></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-47300806-3', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

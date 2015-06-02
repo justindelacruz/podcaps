@@ -1,0 +1,25 @@
+<div class="medium-12 column hero">
+    <h2><span class="hero-text-caption">Captions</span> for podcasts.</h2>
+
+    <p>
+        Podcaps help you read along with popular podcasts.
+    </p>
+</div>
+
+<div class="row">
+    <div class="large-12 column">
+        <h3><strong>Welcome to Night Vale</strong></h3>
+        <p>
+            "Welcome to Night Vale" is a twice-monthly podcast in the style of community updates for the small desert
+            town of Night Vale, featuring local weather, news, announcements from the Sheriff's Secret Police,
+            mysterious lights in the night sky, dark hooded figures with unknowable powers, and cultural events.
+        </p>
+
+        <h4>Episodes of Welcome to Night Vale with captions:</h4>
+    </div>
+
+    <div class="large-12 column episode" ng-repeat="episode in episodes.episodes">
+        <img src="/static/images/night-vale-radio.jpg" />
+        <a ng-href="play/{{ episode.series }}/{{ episode.episode }}" ng-bind-html="episode.title">{{ episode.title }}</a>
+    </div>
+</div>
