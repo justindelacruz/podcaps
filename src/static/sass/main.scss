@@ -1,0 +1,119 @@
+@import "compass/css3/images";
+@import "compass/css3/transition";
+
+.top-bar {
+    z-index: 10;
+}
+
+.top-bar .name h1 a {
+    font-family: Cookie, $font-family-sans-serif;
+    text-transform: lowercase;
+}
+
+.top-bar .button {
+    line-height: 20px; // height of fa-2x
+}
+
+.hero {
+    background-color: #3299BB;
+    color: $white;
+    width: 100%;
+    padding: 30px 0 20px;
+    margin-bottom: 10px;
+    text-align: center;
+
+    h2 {
+        color: $white;
+        font-size: 3rem;
+    }
+
+    .hero-text-caption {
+        background-color: $black;
+        padding: 0 10px;
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: $black;
+    color: $white;
+    margin-top: 20px;
+    padding: 40px 0 20px;
+
+    a {
+        color: $white;
+        text-decoration: underline;
+
+        &:hover {
+            color: red;
+        }
+    }
+
+    .back-to-top {
+        float: right;
+    }
+}
+
+.captions {
+    background-color: $white;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px 0 180px 0;
+
+    .caption-text {
+        @include transition-property(all);
+        @include transition-duration(500ms);
+
+        max-width: 75%;
+        display: block;
+        padding: 30px;
+        font-size: 2rem;
+        border-radius: 30px;
+        margin: 0 auto;
+
+        &.active {
+            background-color: $black;
+            color: $white;
+        }
+
+        &.active-add {
+        }
+
+        &.active-remove {
+        }
+
+        &:not(.active) {
+        }
+    }
+}
+
+#audio {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    line-height: 0;
+    background-color: $white-smoke;
+
+    & > iframe {
+        width: 100%;
+    }
+}
+
+#search {
+    em {
+        font-weight: 600;
+        font-style: normal;
+    }
+}
+
+.episode {
+    padding: 10px;
+
+    img {
+        width: 80px;
+        margin-right: 20px;
+    }
+}
