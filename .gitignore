@@ -1,6 +1,6 @@
 .env
 *.pyc
-src/static/bower_components/*
+src/static/bower_components
 src/data
 src/static/css
 .sass-cache
