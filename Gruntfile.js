@@ -9,20 +9,11 @@ module.exports = function(grunt) {
                     specify: 'src/static/sass/app.scss'
                 }
             }
-        },
-        bower: {
-            dev: {
-                dest: 'src/static/bower_components',
-                options: {
-                    ignorePackages: ['jquery']
-                }
-            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-bower');
 
     // Default tasks
-    grunt.registerTask('heroku:production', ['bower', 'compass']);
+    grunt.registerTask('heroku:production', ['compass']);
 };
