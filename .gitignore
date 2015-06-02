@@ -2,6 +2,7 @@
 *.pyc
 src/static/bower_components/*
 src/data/
+src/static/css/
 .sass-cache
 node_modules
 
