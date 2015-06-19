@@ -6,7 +6,7 @@
               ng-class="{'active': time >= caption.start && time < caption.end}"
               ng-repeat="caption in captions.captions"
               ng-bind-html="caption.text"
-              ng-click="seek()">
+              ng-click="seek($event)">
         </span>
     </div>
 </div>

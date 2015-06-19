@@ -45,8 +45,8 @@
                     }
                 });
                 
-                $scope.seek = function() {
-                    var newTime = $(event.target).data('start');
+                $scope.seek = function($event) {
+                    var newTime = $($event.target).data('start');
                     $scope.time = newTime;
                     pop.currentTime(newTime);
                 };
