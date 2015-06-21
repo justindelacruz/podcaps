@@ -1,0 +1,25 @@
+{
+  "globalstrict": true,
+  "globals": {
+    "angular": false,
+    "describe": false,
+    "it": false,
+    "expect": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "module": false,
+    "inject": false,
+    "spyOn": false
+  },
+  "noempty":true,
+  "noarg":true,
+  "eqeqeq":true,
+  "devel":true,
+  "jquery":true,
+  "browser":true,
+  "bitwise":true,
+  "curly":true,
+  "undef":true,
+  "nonew":true,
+  "forin":true
+}
