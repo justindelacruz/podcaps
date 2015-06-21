@@ -1,19 +1,19 @@
-(function() {
+(function($) {
     'use strict';
 
     // Foundation JavaScript
     $(document).foundation();
 
     // Declare app level module which depends on views, and components
-    angular.module('myApp', [
+    angular.module('app', [
         'ngRoute',
         'ngSanitize',
         'ngAnimate',
-        'myApp.home',
-        'myApp.search',
-        'myApp.play',
-        'myApp.nav',
-        'myApp.nightValeServices'
+        'app.home',
+        'app.search',
+        'app.play',
+        'app.nav',
+        'app.nightValeServices'
     ])
         .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
             $routeProvider.otherwise({redirectTo: '/'});
@@ -23,4 +23,4 @@
             // Don't strip trailing slashes from calculated URLs
             $resourceProvider.defaults.stripTrailingSlashes = false;
         }]);
-})();
+})($);

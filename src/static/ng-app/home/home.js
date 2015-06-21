@@ -1,7 +1,7 @@
 (function(angular) {
     "use strict";
 
-    angular.module('myApp.home', ['ngRoute'])
+    angular.module('app.home', ['ngRoute'])
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/', {
                 templateUrl: '/static/ng-app/home/home.html',
@@ -11,7 +11,9 @@
 
         .controller('HomeCtrl', ['$scope', '$location', 'Api',
             function ($scope, $location, Api) {
-                $scope.episodes = Api.episodes.get({series: 'nightvaleradio'});
+                Api.episodes.get({series: 'nightvaleradio'}).$promise.then(function(episodes) {
+                    $scope.episodes = episodes;
+                });
             }
         ]);
 })(angular);

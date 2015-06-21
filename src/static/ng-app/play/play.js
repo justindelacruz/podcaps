@@ -1,7 +1,7 @@
 (function(angular, $) {
     "use strict";
 
-    angular.module('myApp.play', ['ngRoute'])
+    angular.module('app.play', ['ngRoute'])
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.when('/play/:series/:episodeId', {
                 templateUrl: '/static/ng-app/play/play.html',
@@ -29,6 +29,8 @@
                     pop.play();
                 });
 
+
+
                 $scope.$watch(function() {return $('.caption-text.active').attr('data-start'); }, function(newValue, oldValue) {
                     var a = $('.captions').find('[data-start="'+newValue+'"]');
 
@@ -44,7 +46,9 @@
                         });
                     }
                 });
-                
+
+
+
                 $scope.seek = function($event) {
                     var newTime = $($event.target).data('start');
                     $scope.time = newTime;

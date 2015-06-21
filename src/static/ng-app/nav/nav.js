@@ -1,7 +1,7 @@
 (function(angular) {
     "use strict";
 
-    angular.module('myApp.nav', ['ngRoute'])
+    angular.module('app.nav', ['ngRoute'])
         .controller('NavCtrl', ['$scope', '$routeParams', '$location', function ($scope, $routeParams, $location) {
             // $routeParams is populated asynchronously, so we subscribe to when its notified.
             $scope.$on('$routeChangeSuccess', function() {

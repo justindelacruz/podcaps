@@ -1,7 +1,7 @@
 (function(angular) {
     'use strict';
     
-    var nightValeServices = angular.module('myApp.nightValeServices', ['ngResource']);
+    var nightValeServices = angular.module('app.nightValeServices', ['ngResource']);
     
     nightValeServices.factory('Api', ['$resource',
         function($resource) {
