@@ -1,0 +1,7 @@
+<span class="caption-text"
+      data-start="{{model.start}}"
+      data-end="{{model.end}}"
+      ng-class="{'active': isActive(time)}"
+      ng-bind-html="model.text"
+      ng-click="seekTo($event, model.start)">
+</span>

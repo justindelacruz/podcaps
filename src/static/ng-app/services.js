@@ -16,8 +16,4 @@
             };
         }
     ]);
-    
-    nightValeServices.factory('Popcorn', function($window) {
-        return $window.Popcorn;
-    });
 })(angular);
