@@ -70,7 +70,7 @@ module.exports = function(grunt) {
                     'src/static/js/app.dist.js': [ 'src/static/js/app.dist.js' ]
                 },
                 options: {
-                    mangle: false
+                    mangle: true
                 }
             }
         },
@@ -103,5 +103,7 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', [ 'watch:dev' ]);
     grunt.registerTask('test', [ 'karma:continuous' ]);
     grunt.registerTask('minified', [ 'watch:minified' ]);
-    grunt.registerTask('heroku:production', ['compass']);
+    grunt.registerTask('heroku:production', [
+        'compass', 'html2js:dist', 'concat:jsCore', 'concat:jsApp', 'clean:temp', 'uglify:dist'
+    ]);
 };

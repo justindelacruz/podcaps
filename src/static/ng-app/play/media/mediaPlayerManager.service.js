@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('app.play')
-        .factory('Popcorn', function($window) {
+        .factory('Popcorn', ['$window', function($window) {
             return $window.Popcorn;
-        })
+        }])
         .factory('MediaPlayerManager', function() {
             var _currentTime = 0,
                 _mediaPlayer;
