@@ -13,8 +13,24 @@ module.exports = function(grunt) {
         },
 
         html2js: {
+            options: {
+                base: 'src',
+                module: 'app.templates',
+                singleModule: true,
+                useStrict: true,
+                htmlmin: {
+                    caseSensitive: true,
+                    collapseWhitespace: true,
+                    conservativeCollapse: true,
+                    preserveLineBreaks: true,
+                    removeComments: true,
+                    removeRedundantAttributes: true,
+                    removeScriptTypeAttributes: true,
+                    removeStyleLinkTypeAttributes: true
+                }
+            },
             dist: {
-                src: [ 'src/static/ng-app/*.tpl.html' ],
+                src: [ 'src/static/ng-app/**/*.tpl.html' ],
                 dest: 'tmp/templates.js'
             }
         },
@@ -51,7 +67,7 @@ module.exports = function(grunt) {
         uglify: {
             dist: {
                 files: {
-                    'src/static/ng-app/dist.js': [ 'src/static/ng-app/dist.js' ]
+                    'src/static/js/app.dist.js': [ 'src/static/js/app.dist.js' ]
                 },
                 options: {
                     mangle: false
@@ -67,9 +83,9 @@ module.exports = function(grunt) {
                     atBegin: true
                 }
             },
-            min: {
+            minified: {
                 files: [ 'Gruntfile.js', 'src/static/ng-app/**/*.js', 'src/static/ng-app/**/*.tpl.html' ],
-                tasks: [ 'html2js:dist', 'concat:jsApp', 'concat:jsCore', 'clean:temp', 'uglify:dist' ],
+                tasks: [ 'html2js:dist', 'concat:jsCore', 'concat:jsApp', 'clean:temp', 'uglify:dist' ],
                 options: {
                     atBegin: true
                 }
@@ -86,6 +102,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('dev', [ 'watch:dev' ]);
     grunt.registerTask('test', [ 'karma:continuous' ]);
-    grunt.registerTask('minified', [ 'watch:min' ]);
+    grunt.registerTask('minified', [ 'watch:minified' ]);
     grunt.registerTask('heroku:production', ['compass']);
 };

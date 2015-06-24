@@ -8,7 +8,7 @@
                     model: '='
                 },
                 restrict: 'E',
-                templateUrl: '/static/ng-app/play/media/caption/mediaCaption.tpl.html',
+                templateUrl: 'static/ng-app/play/media/caption/mediaCaption.tpl.html',
                 link: function(scope, element, attr) {
                     scope.time = 0;
                     scope.isActive = _isActive;

@@ -13,7 +13,8 @@
         'app.search',
         'app.play',
         'app.nav',
-        'app.nightValeServices'
+        'app.nightValeServices',
+        'app.templates'
     ])
         .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
             $routeProvider.otherwise({redirectTo: '/'});
