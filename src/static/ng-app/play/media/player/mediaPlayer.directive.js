@@ -10,7 +10,7 @@
                     episodeId: '='
                 },
                 restrict: 'E',
-                templateUrl: '/static/ng-app/play/mediaPlayer/mediaPlayer.html',
+                templateUrl: '/static/ng-app/play/media/player/mediaPlayer.tpl.html',
                 link: function(scope, element, attr) {
                     var mediaUrl,
                         mediaPlayer;

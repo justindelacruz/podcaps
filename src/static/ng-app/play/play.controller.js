@@ -1,14 +1,7 @@
 (function(angular) {
     "use strict";
 
-    angular.module('app.play', ['ngRoute'])
-        .config(['$routeProvider', function($routeProvider) {
-            $routeProvider.when('/play/:series/:episodeId', {
-                templateUrl: '/static/ng-app/play/play.html',
-                controller: 'PlayCtrl'
-            });
-        }])
-
+    angular.module('app.play')
         .controller('PlayCtrl', ['$scope', '$routeParams', 'Api', 'MediaPlayerManager',
             function($scope, $routeParams, Api, MediaPlayerManager) {
                 $scope.episodeId = $routeParams.episodeId;
