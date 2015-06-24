@@ -6,6 +6,10 @@ src/static/css
 .sass-cache
 node_modules
 
+# Compiled by grunt
+src/static/js
+tmp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

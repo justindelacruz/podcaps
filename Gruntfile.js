@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                     'src/static/ng-app/**/*.module.js',
                     'tmp/jsCore.js'
                 ],
-                dest: 'src/static/js/dist.js'
+                dest: 'src/static/js/app.dist.js'
             }
         },
 
