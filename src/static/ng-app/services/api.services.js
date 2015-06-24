@@ -1,10 +1,8 @@
 (function(angular) {
     'use strict';
-    
-    var nightValeServices = angular.module('app.nightValeServices', ['ngResource']);
-    
-    nightValeServices.factory('Api', ['$resource',
-        function($resource) {
+
+    angular.module('app.nightValeServices')
+        .factory('Api', ['$resource', function($resource) {
             return {
                 search: $resource('/api/search/nightvaleradio/', {}, {
                     query: {method: 'GET', isArray: true}

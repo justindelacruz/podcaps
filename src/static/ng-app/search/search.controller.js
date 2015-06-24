@@ -1,14 +1,7 @@
 (function(angular) {
     "use strict";
 
-    angular.module('app.search', ['ngRoute'])
-        .config(['$routeProvider', function ($routeProvider) {
-            $routeProvider.when('/search', {
-                templateUrl: '/static/ng-app/search/search.html',
-                controller: 'SearchCtrl'
-            });
-        }])
-
+    angular.module('app.search')
         .controller('SearchCtrl', ['$scope', '$route', '$sanitize', 'Api',
             function ($scope, $route, $sanitize, Api) {
                 $scope.$route = $route;
