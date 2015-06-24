@@ -18,7 +18,7 @@
         <h4>Episodes of Welcome to Night Vale with captions:</h4>
     </div>
 
-    <div class="large-12 column episode" ng-repeat="episode in episodes.episodes">
+    <div class="large-12 column episode" ng-repeat="episode in home.episodes.episodes">
         <img src="/static/images/night-vale-radio.jpg" />
         <a ng-href="play/{{ episode.series }}/{{ episode.episode }}" ng-bind-html="episode.title">{{ episode.title }}</a>
     </div>

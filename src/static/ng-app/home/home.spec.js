@@ -2,21 +2,12 @@
     'use strict';
 
     describe("HomeCtrl", function () {
-        var ctrl,
-            scope,
-            routeParams;
+        var ctrl;
 
         beforeEach(module('app'));
 
-        beforeEach(inject(function ($rootScope, $controller) {
-            scope = $rootScope.$new();
-            routeParams = {
-                episodeId: 1
-            };
-            ctrl = $controller('HomeCtrl', {
-                $scope: scope,
-                $routeParams: routeParams
-            });
+        beforeEach(inject(function ($controller) {
+            ctrl = $controller('HomeCtrl', {});
         }));
 
         it("should exist", function () {

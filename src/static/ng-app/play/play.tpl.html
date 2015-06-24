@@ -1,7 +1,7 @@
 <div class="row">
     <div class="captions medium-12 column">
-        <pc-media-caption ng-repeat="caption in captions.captions" model="caption"></pc-media-caption>
+        <pc-media-caption ng-repeat="caption in play.captions.captions" model="caption"></pc-media-caption>
     </div>
 </div>
 
-<pc-media-player type="soundcloud" series="nightvaleradio" episode-id="episodeId"></pc-media-player>
+<pc-media-player type="soundcloud" series="nightvaleradio" episode-id="play.episodeId"></pc-media-player>

@@ -14,8 +14,8 @@ module.exports = function(config){
             'src/static/bower_components/angular-sanitize/angular-sanitize.js',
             'src/static/bower_components/angular-animate/angular-animate.js',
             'src/static/bower_components/angular-mocks/angular-mocks.js',
-            'src/static/ng-app/**/*.module.js',
-            'src/static/ng-app/**/*.js'
+            'src/static/ng-app/**/*.spec.js',
+            'src/static/js/app.dist.js'
         ],
 
         autoWatch : true,

@@ -5,7 +5,8 @@
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/search', {
                 templateUrl: 'static/ng-app/search/search.tpl.html',
-                controller: 'SearchCtrl'
+                controller: 'SearchCtrl',
+                controllerAs: 'search'
             });
         }]);
 })(angular);

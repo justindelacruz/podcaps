@@ -2,13 +2,12 @@
     "use strict";
 
     angular.module('app.search')
-        .controller('SearchCtrl', ['$scope', '$route', '$sanitize', 'Api',
-            function ($scope, $route, $sanitize, Api) {
-                $scope.$route = $route;
-                $scope.query = $route.current.params.q || '';
+        .controller('SearchCtrl', ['$route', '$sanitize', 'Api',
+            function ($route, $sanitize, Api) {
+                this.query = $route.current.params.q || '';
 
-                if ($scope.query) {
-                    $scope.results = Api.search.query({q: $scope.query});
+                if (this.query) {
+                    this.results = Api.search.query({q: this.query});
                 }
             }]);
 })(angular);
