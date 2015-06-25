@@ -64,6 +64,21 @@ module.exports = function(grunt) {
             }
         },
 
+        karma: {
+            options: {
+                configFile: 'karma.conf.js'
+            },
+            unit: {
+                singleRun: true,
+                browsers: ['PhantomJS']
+            },
+
+            continuous: {
+                singleRun: false,
+                autoWatch: true
+            }
+        },
+
         uglify: {
             dist: {
                 files: {
@@ -78,14 +93,14 @@ module.exports = function(grunt) {
         watch: {
             dev: {
                 files: [ 'Gruntfile.js', 'src/static/ng-app/**/*.js', 'src/static/ng-app/**/*.tpl.html' ],
-                tasks: [ 'html2js:dist', 'concat:jsCore', 'concat:jsApp', 'clean:temp' ],
+                tasks: [ 'html2js:dist', 'concat:jsCore', 'concat:jsApp', 'clean:temp', 'karma:unit' ],
                 options: {
                     atBegin: true
                 }
             },
             minified: {
                 files: [ 'Gruntfile.js', 'src/static/ng-app/**/*.js', 'src/static/ng-app/**/*.tpl.html' ],
-                tasks: [ 'html2js:dist', 'concat:jsCore', 'concat:jsApp', 'clean:temp', 'uglify:dist' ],
+                tasks: [ 'html2js:dist', 'concat:jsCore', 'concat:jsApp', 'clean:temp', 'karma:unit', 'uglify:dist' ],
                 options: {
                     atBegin: true
                 }
@@ -99,6 +114,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('dev', [ 'watch:dev' ]);
     grunt.registerTask('test', [ 'karma:continuous' ]);

@@ -2,16 +2,16 @@
     'use strict';
 
     describe("HomeCtrl", function () {
-        var ctrl;
-
         beforeEach(module('app'));
 
-        beforeEach(inject(function ($controller) {
-            ctrl = $controller('HomeCtrl', {});
+        var $controller;
+        beforeEach(inject(function (_$controller_) {
+            $controller = _$controller_;
         }));
 
         it("should exist", function () {
-            expect(ctrl).toBeDefined();
+            var controller = $controller('HomeCtrl', {});
+            expect(controller).toBeDefined();
         });
     });
 })();

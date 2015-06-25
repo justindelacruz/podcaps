@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module('app.play')
-        .directive('pcMediaPlayer', ['Popcorn', 'MediaPlayerManager', function(Popcorn, MediaPlayerManager) {
+        .directive('pcMediaPlayer', ['Popcorn', 'MediaSeeker', function(Popcorn, MediaSeeker) {
             return {
                 scope: {
                     type: '@',
@@ -23,16 +23,16 @@
                     mediaPlayer.controls(true);
                     mediaPlayer.on("timeupdate", function() {
                         scope.$apply(function() {
-                            MediaPlayerManager.setCurrentTime(mediaPlayer.currentTime());
+                            MediaSeeker.setCurrentTime(mediaPlayer.currentTime());
                         });
                     });
 
                     mediaPlayer.on("canplayall", function() {
-                        mediaPlayer.currentTime( MediaPlayerManager.getCurrentTime() );
+                        mediaPlayer.currentTime( MediaSeeker.getCurrentTime() );
                         mediaPlayer.play();
                     });
 
-                    MediaPlayerManager.setMediaPlayer(mediaPlayer);
+                    MediaSeeker.setMediaPlayer(mediaPlayer);
                 }
             };
         }]);

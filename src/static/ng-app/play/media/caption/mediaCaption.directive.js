@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module('app.play')
-        .directive('pcMediaCaption', ['MediaPlayerManager', function(MediaPlayerManager) {
+        .directive('pcMediaCaption', ['MediaSeeker', function(MediaSeeker) {
             return {
                 scope: {
                     model: '='
@@ -15,7 +15,7 @@
                     scope.seekTo = _seekTo;
 
                     var isCaptionActive = false;
-                    scope.$watch(function() { return MediaPlayerManager.getCurrentTime(); }, function (newTime, oldTime) {
+                    scope.$watch(function() { return MediaSeeker.getCurrentTime(); }, function (newTime, oldTime) {
                         if (newTime !== oldTime) {
                             scope.time = newTime;
                             if (_isActive(newTime)) {
@@ -48,7 +48,7 @@
                     }
 
                     function _seekTo($event, time) {
-                        MediaPlayerManager.seekTo(scope.model.start);
+                        MediaSeeker.seekTo(time);
                     }
                 }
             };

@@ -7,15 +7,18 @@ module.exports = function(config){
 
         files : [
             'src/static/bower_components/jquery/dist/jquery.js',
-            'src/static/bower_components/foundation/js/foundation.js',
             'src/static/bower_components/angular/angular.js',
             'src/static/bower_components/angular-route/angular-route.js',
             'src/static/bower_components/angular-resource/angular-resource.js',
             'src/static/bower_components/angular-sanitize/angular-sanitize.js',
             'src/static/bower_components/angular-animate/angular-animate.js',
             'src/static/bower_components/angular-mocks/angular-mocks.js',
-            'src/static/ng-app/**/*.spec.js',
-            'src/static/js/app.dist.js'
+            'src/static/bower_components/justindelacruz-popcorn-js/popcorn.js',
+            'src/static/bower_components/justindelacruz-popcorn-js/modules/player/popcorn.player.js',
+            'src/static/bower_components/justindelacruz-popcorn-js/wrappers/common/popcorn._MediaElementProto.js',
+            'src/static/bower_components/justindelacruz-popcorn-js/wrappers/soundcloud/popcorn.HTMLSoundCloudAudioElement.js',
+            'src/static/js/app.dist.js',
+            'src/static/ng-app/**/*.spec.js'
         ],
 
         autoWatch : true,
@@ -26,15 +29,8 @@ module.exports = function(config){
 
         plugins : [
             'karma-chrome-launcher',
-            'karma-firefox-launcher',
-            'karma-jasmine',
-            'karma-junit-reporter'
-        ],
-
-        junitReporter : {
-            outputFile: 'test_out/unit.xml',
-            suite: 'unit'
-        }
-
+            'karma-phantomjs-launcher',
+            'karma-jasmine'
+        ]
     });
 };

@@ -1,8 +1,5 @@
-(function($) {
+(function(angular) {
     'use strict';
-
-    // Foundation JavaScript
-    $(document).foundation();
 
     // Declare app level module which depends on views, and components
     angular.module('app', [
@@ -24,4 +21,4 @@
             // Don't strip trailing slashes from calculated URLs
             $resourceProvider.defaults.stripTrailingSlashes = false;
         }]);
-})($);
+})(angular);

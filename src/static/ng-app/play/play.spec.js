@@ -4,18 +4,19 @@
     describe("PlayCtrl", function () {
         beforeEach(module('app'));
 
-        var ctrl, routeParams;
-        beforeEach(inject(function ($controller) {
-            routeParams = {
-                episodeId: 1
-            };
-            ctrl = $controller('PlayCtrl', {
-                $routeParams: routeParams
-            });
+        var $controller;
+        beforeEach(inject(function (_$controller_) {
+            $controller = _$controller_;
         }));
 
         it("should have 'episodeId' in the route param", function () {
-            expect(ctrl.episodeId).toEqual(1);
+            var controller = $controller('PlayCtrl', {
+                $routeParams: {
+                    episodeId: 1
+                }
+            })
+
+            expect(controller.episodeId).toEqual(1);
         });
     });
 })();

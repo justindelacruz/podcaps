@@ -2,29 +2,25 @@
     'use strict';
 
     describe("SearchCtrl", function () {
-        var ctrl,
-            scope,
-            route;
-
         beforeEach(module('app'));
 
-        beforeEach(inject(function ($rootScope, $controller) {
-            scope = $rootScope.$new();
-            route = {
-                current: {
-                    params: {
-                        q: 'foobar'
-                    }
-                }
-            };
-            ctrl = $controller('SearchCtrl', {
-                $scope: scope,
-                $route: route
-            });
+        var $controller;
+        beforeEach(inject(function (_$controller_) {
+            $controller = _$controller_;
         }));
 
         it("should exist", function () {
-            expect(ctrl).toBeDefined();
+            var controller = $controller('SearchCtrl', {
+                $route: {
+                    current: {
+                        params: {
+                            q: 'foobar'
+                        }
+                    }
+                }
+            });
+
+            expect(controller).toBeDefined();
         });
     });
 })();
