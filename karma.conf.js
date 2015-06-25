@@ -17,8 +17,9 @@ module.exports = function(config){
             'src/static/bower_components/justindelacruz-popcorn-js/modules/player/popcorn.player.js',
             'src/static/bower_components/justindelacruz-popcorn-js/wrappers/common/popcorn._MediaElementProto.js',
             'src/static/bower_components/justindelacruz-popcorn-js/wrappers/soundcloud/popcorn.HTMLSoundCloudAudioElement.js',
-            'src/static/js/app.dist.js',
-            'src/static/ng-app/**/*.spec.js'
+            'src/static/ng-app/**/*.module.js',
+            'src/static/js-dist/templates.js',
+            'src/static/ng-app/**/*'
         ],
 
         autoWatch : true,
@@ -30,6 +31,7 @@ module.exports = function(config){
         plugins : [
             'karma-chrome-launcher',
             'karma-phantomjs-launcher',
+            'karma-firefox-launcher',
             'karma-jasmine'
         ]
     });

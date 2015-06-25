@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: [ 'src/static/ng-app/**/*.tpl.html' ],
-                dest: 'tmp/templates.js'
+                dest: 'src/static/js-dist/templates.js'
             }
         },
 
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
             jsCore: {
                 src: [
                     'src/static/ng-app/**/*.js',
-                    'tmp/*.js',
+                    'src/static/js-dist/templates.js',
                     '!src/static/ng-app/**/*.module.js',
                     '!src/static/ng-app/**/*.spec.js'
                 ],
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
                     'src/static/ng-app/**/*.module.js',
                     'tmp/jsCore.js'
                 ],
-                dest: 'src/static/js/app.dist.js'
+                dest: 'src/static/js-dist/app.js'
             }
         },
 
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
         uglify: {
             dist: {
                 files: {
-                    'src/static/js/app.dist.js': [ 'src/static/js/app.dist.js' ]
+                    'src/static/js/app.js': [ 'src/static/js/app.js' ]
                 },
                 options: {
                     mangle: true
@@ -93,14 +93,14 @@ module.exports = function(grunt) {
         watch: {
             dev: {
                 files: [ 'Gruntfile.js', 'src/static/ng-app/**/*.js', 'src/static/ng-app/**/*.tpl.html' ],
-                tasks: [ 'html2js:dist', 'concat:jsCore', 'concat:jsApp', 'clean:temp', 'karma:unit' ],
+                tasks: [ 'karma:unit', 'html2js:dist', 'concat:jsCore', 'concat:jsApp', 'clean:temp' ],
                 options: {
                     atBegin: true
                 }
             },
             minified: {
                 files: [ 'Gruntfile.js', 'src/static/ng-app/**/*.js', 'src/static/ng-app/**/*.tpl.html' ],
-                tasks: [ 'html2js:dist', 'concat:jsCore', 'concat:jsApp', 'clean:temp', 'karma:unit', 'uglify:dist' ],
+                tasks: [ 'karma:unit', 'html2js:dist', 'concat:jsCore', 'concat:jsApp', 'clean:temp', 'karma:unit', 'uglify:dist' ],
                 options: {
                     atBegin: true
                 }
